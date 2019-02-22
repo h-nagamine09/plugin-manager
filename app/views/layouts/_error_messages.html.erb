@@ -1,0 +1,9 @@
+<% if plugin.errors.any? %>
+  <div class="alert alert-warning">
+     <ul>
+       <% plugin.errors.full_messages.each do |plugin| %>
+       <li><%= plugin %></li>
+       <% end %>
+     </ul>
+  </div>
+<% end %>

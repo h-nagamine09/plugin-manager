@@ -1,0 +1,25 @@
+<h1>プラグインリスト</h1>
+<% if @plugins.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>プラグインの名前</th>
+        <th>プラグインのメーカー</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plugins.each do |plugin| %>
+        <tr>
+          <td><%= link_to plugin.plugin_name,plugin %></td>
+          <td><%=plugin.company %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div>
+    <%= paginate @plugins %>
+  </div>
+<% end %>
+
+<%= link_to 'プラグインの情報を追加',new_plugin_path,class: 'btn btn-primary' %>
+

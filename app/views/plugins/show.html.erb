@@ -1,0 +1,32 @@
+<h1><%= @plugin.plugin_name %>の詳細</h1>
+<table class="table table-bordered">
+  <tr>
+    <th>プラグインの名称</th>
+    <td><%=@plugin.plugin_name %></td>
+  </tr>
+  <tr>
+    <th>プラグインを買った値段</th>
+    <td><%=@plugin.price %></td>
+  </tr>
+  <tr>
+    <th>プラグインのメーカー</th>
+    <td><%=@plugin.company %></td>
+  </tr>
+  <tr>
+    <th>プラグインの説明</th>
+    <td><%=@plugin.description %></td>
+  </tr>
+  <tr>
+    <th>このプラグインのTips</th>
+    <td><%=@plugin.content %></td>
+  </tr>
+</table>
+  
+  
+
+
+<%=link_to 'プラグインを追加',new_plugin_path,class: 'btn btn-primary' %>
+<%=link_to 'このプラグインの編集',edit_plugin_path(@plugin),class: 'btn btn-default'%>
+<%=link_to 'このプラグインを削除', @plugin,method: :delete,data: {confirm: 'Delete OK?'},class: 'btn btn-danger'%>
+
+
