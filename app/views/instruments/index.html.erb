@@ -1,0 +1,23 @@
+<h1>ソフトシンセ</h1>
+<% if @instruments.any? %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ソフトシンセの名前</th>
+        <th>ソフトシンセのメーカー</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @instruments.each do |instrument| %>
+        <tr>
+          <td><%= link_to instrument.instrument_name,instrument %></td>
+          <td><%=instrument.company %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+ 
+<% end %>
+
+<%= link_to 'ソフトシンセの情報を追加',new_instrument_path,class: 'btn btn-primary' %>
+

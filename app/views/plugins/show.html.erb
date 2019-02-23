@@ -1,5 +1,10 @@
-<h1><%= @plugin.plugin_name %>の詳細</h1>
+<h1><%= @plugin.plugin_name %></h1>
 <table class="table table-bordered">
+  <aside>
+    <div class="plugin-image">
+      <%=image_tag(@plugin.picture_url)if @plugin.picture.present? %>
+    </div>
+  </aside>
   <tr>
     <th>プラグインの名称</th>
     <td><%=@plugin.plugin_name %></td>
@@ -19,6 +24,10 @@
   <tr>
     <th>このプラグインのTips</th>
     <td><%=@plugin.content %></td>
+  </tr>
+   <tr>
+    <th>Official-Site</th>
+    <td><%=link_to @plugin.company,@plugin.link_url %></td>
   </tr>
 </table>
   

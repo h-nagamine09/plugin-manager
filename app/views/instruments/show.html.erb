@@ -1,0 +1,41 @@
+<h1><%= @instrument.instrument_name %></h1>
+<table class="table table-bordered">
+  <aside>
+    <div class="plugin-image">
+      <%=image_tag(@instrument.picture_url)if @instrument.picture.present? %>
+    </div>
+  </aside>
+  <tr>
+    <th>プラグインの名称</th>
+    <td><%=@instrument.instrument_name %></td>
+  </tr>
+  <tr>
+    <th>プラグインを買った値段</th>
+    <td><%=@instrument.price %></td>
+  </tr>
+  <tr>
+    <th>プラグインのメーカー</th>
+    <td><%=@instrument.company %></td>
+  </tr>
+  <tr>
+    <th>プラグインの説明</th>
+    <td><%=@instrument.description %></td>
+  </tr>
+  <tr>
+    <th>このプラグインのTips</th>
+    <td><%=@instrument.content %></td>
+  </tr>
+   <tr>
+    <th>Official-Site</th>
+    <td><%=link_to @instrument.instrument_name,@instrument.link_url %></td>
+  </tr>
+</table>
+  
+  
+
+
+<%=link_to 'ソフトシンセを追加',new_instrument_path,class: 'btn btn-primary' %>
+<%=link_to 'このソフトシンセの編集',edit_instrument_path(@instrument),class: 'btn btn-default'%>
+<%=link_to 'このソフトシンセを削除', @instrument,method: :delete,data: {confirm: 'Delete OK?'},class: 'btn btn-danger'%>
+
+

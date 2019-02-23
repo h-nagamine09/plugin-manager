@@ -1,0 +1,55 @@
+<div class="row">
+ <div class="col-xs-6">
+ <%= form_for(instrument) do |f| %>
+       <% if instrument.errors.any? %>
+   <div class ="alert alert-warning">
+     <ul>
+         <% instrument.errors.full_messages.each do |instrument| %>
+         <li><%= instrument %></li>
+         <% end %>
+     </ul>
+   </div>
+       <% end %>
+       
+    <div class='form-group'>
+     <%= f.label :instrument_name,'このソフトシンセの名前' %>
+     <%= f.text_field :instrument_name,class: 'form-control'%>
+    </div>
+  
+    <div class='form-group'>
+     <%= f.label :price,'このソフトシンセを買った値段' %>
+     <%= f.text_field :price,class: 'form-control'%>
+    </div>
+    
+    <div class='form-group'>
+     <%= f.label :company,'このソフトシンセのメーカー' %>
+     <%= f.text_field :company,class: 'form-control'%>
+    </div>
+    
+    <div class='form-group'>
+     <%= f.label :description,'このソフトシンセの説明' %>
+     <%= f.text_field :description,class: 'form-control'%>
+    </div>
+    
+    <div class='form-group'>
+     <%= f.label :content,'このソフトシンセのTips' %>
+     <%= f.text_field :content,class: 'form-control'%>
+    </div>
+    
+    <div class='form-group'>
+     <%= f.label :link_url,'Official-Site' %>
+     <%= f.text_field :link_url,class: 'form-control'%>
+    </div>
+    
+    <div class='form-group'>
+     <%= f.label :picture,'このソフトシンセのイメージ' %>
+     <%= f.file_field :picture,class: 'form-control'%>
+    </div>
+    
+   
+        <%= f.submit '追加' ,class: 'btn btn-primary'%>
+  <% end %>
+ </div>
+</div>
+  
+

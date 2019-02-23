@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190222132041) do
+ActiveRecord::Schema.define(version: 20190223151446) do
+
+  create_table "instruments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "instrument_name"
+    t.string   "price"
+    t.string   "company"
+    t.string   "description"
+    t.string   "content"
+    t.string   "link_url"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "picture"
+  end
 
   create_table "plugins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "plugin_name"
@@ -21,6 +33,7 @@ ActiveRecord::Schema.define(version: 20190222132041) do
     t.string   "link_url"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "picture"
   end
 
 end

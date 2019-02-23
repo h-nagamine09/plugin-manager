@@ -2,7 +2,7 @@ class PluginsController < ApplicationController
   before_action :set_plugin, only: [:show, :edit, :update, :destroy]
   
   def index
-    @plugins = Plugin.order(created_at: :desc).page(params[:page]).per(5) #pluginの一覧を取得、表示
+    @plugins = Plugin.all #pluginの一覧を取得、表示
   end
   
   def show
@@ -13,12 +13,11 @@ class PluginsController < ApplicationController
   end 
   
   def create
-    @plugin = current_user.plugins.build(plugin_params)
+    @plugin = Plugin.new(plugin_params)
     if @plugin.save
       flash[:success] = 'Success'
-      redirect_to root_url
+      redirect_to @plugin
     else
-      @pugins = current_user.plugins.order('created_at DESC').page(params[:page])
       flash.now[:danger] = 'Post Failed'
       render :new
     end
@@ -41,7 +40,7 @@ class PluginsController < ApplicationController
     @plugin.destroy
     
     flash[:success] = 'Delete!'
-    redirect_back(fallback_location: root_path)
+    redirect_to plugins_url
   end 
   
   private
@@ -52,7 +51,7 @@ class PluginsController < ApplicationController
   
   #strong parameter 
   def plugin_params
-    params.require(:plugin).permit(:plugin_name,:price,:company,:description,:content)
+    params.require(:plugin).permit(:plugin_name,:price,:company,:description,:content,:link_url,:picture)
   end 
 end
 
