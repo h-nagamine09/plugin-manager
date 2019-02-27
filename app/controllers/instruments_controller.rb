@@ -1,4 +1,5 @@
 class InstrumentsController < ApplicationController
+  # before_action :basic
   before_action :set_instrument, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -45,12 +46,19 @@ class InstrumentsController < ApplicationController
   
   private
   
+  # def basic
+  #   authenticate_or_request_eith_http_basic do |name,password|
+  #     name == ENV['BASIC_AUTH_NAME'] && password == ENV['BASIC_AUTH_PASSWORD']
+  #   end
+  # end
+  
+  
   def set_instrument
     @instrument = Instrument.find(params[:id])
   end
   
   #strong parameter 
   def instrument_params
-    params.require(:instrument).permit(:instrument_name,:price,:company,:description,:content,:link_url,:picture)
+    params.require(:instrument).permit(:instrument_name,:instrument_kind_id,:price,:company,:description,:content,:link_url,:picture)
   end 
 end

@@ -2,27 +2,33 @@
 <table class="table table-bordered">
   <aside>
     <div class="plugin-image">
+      <div class="img-resposive"alt="">
       <%=image_tag(@instrument.picture_url)if @instrument.picture.present? %>
+      </div>
     </div>
   </aside>
   <tr>
-    <th>プラグインの名称</th>
+    <th>ソフトシンセの名称</th>
     <td><%=@instrument.instrument_name %></td>
   </tr>
+   <tr>
+    <th>ソフトシンセの種類</th>
+    <td><%=@instrument.instrument_kind_id%></td>
+  </tr>
   <tr>
-    <th>プラグインを買った値段</th>
+    <th>ソフトシンセを買った値段</th>
     <td><%=@instrument.price %></td>
   </tr>
   <tr>
-    <th>プラグインのメーカー</th>
+    <th>ソフトシンセのメーカー</th>
     <td><%=@instrument.company %></td>
   </tr>
   <tr>
-    <th>プラグインの説明</th>
+    <th>ソフトシンセの説明</th>
     <td><%=@instrument.description %></td>
   </tr>
   <tr>
-    <th>このプラグインのTips</th>
+    <th>このソフトシンセのTips</th>
     <td><%=@instrument.content %></td>
   </tr>
    <tr>

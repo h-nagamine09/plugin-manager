@@ -10,6 +10,10 @@
     <td><%=@plugin.plugin_name %></td>
   </tr>
   <tr>
+    <th>プラグインの種類</th>
+    <!--<td>#@plugin.plugin_kinds</td>-->
+  </tr>
+  <tr>
     <th>プラグインを買った値段</th>
     <td><%=@plugin.price %></td>
   </tr>
@@ -34,8 +38,8 @@
   
 
 
-<%=link_to 'プラグインを追加',new_plugin_path,class: 'btn btn-primary' %>
-<%=link_to 'このプラグインの編集',edit_plugin_path(@plugin),class: 'btn btn-default'%>
-<%=link_to 'このプラグインを削除', @plugin,method: :delete,data: {confirm: 'Delete OK?'},class: 'btn btn-danger'%>
+
+
+
 
 

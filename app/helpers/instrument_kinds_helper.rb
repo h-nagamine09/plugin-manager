@@ -1,0 +1,2 @@
+module InstrumentKindsHelper
+end

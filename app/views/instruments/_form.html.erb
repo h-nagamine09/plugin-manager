@@ -15,6 +15,11 @@
      <%= f.label :instrument_name,'このソフトシンセの名前' %>
      <%= f.text_field :instrument_name,class: 'form-control'%>
     </div>
+    
+    <div class='form-group'>
+       <%= f.label :instrument_kind_id,'ソフトシンセの種類' %>
+       <%= f.collection_select :instrument_kind_id,InstrumentKind.all,:id, :name %>
+    </div>
   
     <div class='form-group'>
      <%= f.label :price,'このソフトシンセを買った値段' %>

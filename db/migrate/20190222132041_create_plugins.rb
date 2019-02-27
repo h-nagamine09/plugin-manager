@@ -6,7 +6,7 @@ class CreatePlugins < ActiveRecord::Migration[5.0]
       t.string :company
       t.string :description
       t.string :content
-      #t.string :link_url
+      t.string :link_url
 
       t.timestamps
     end

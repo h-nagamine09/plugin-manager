@@ -15,6 +15,12 @@
      <%= f.label :plugin_name,'プラグインの名前' %>
      <%= f.text_field :plugin_name,class: 'form-control'%>
     </div>
+    
+    <div class='form-group'>
+       <!--データを入れるインスタンス変数を書く-->
+       <%= f.label :plugin_kind_id,'プラグインの種類' %>
+       <%= f.collection_select :plugin_kind_id,PluginKind.all,:id, :name %>
+    </div>
   
     <div class='form-group'>
      <%= f.label :price,'プラグインを買った値段' %>

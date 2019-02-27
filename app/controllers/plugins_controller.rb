@@ -51,7 +51,7 @@ class PluginsController < ApplicationController
   
   #strong parameter 
   def plugin_params
-    params.require(:plugin).permit(:plugin_name,:price,:company,:description,:content,:link_url,:picture)
+    params.require(:plugin).permit(:plugin_name,:plugin_kind_id,:price,:company,:description,:content,:link_url,:picture)
   end 
 end
 

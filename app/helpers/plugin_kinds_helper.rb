@@ -1,0 +1,2 @@
+module PluginKindsHelper
+end

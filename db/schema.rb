@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190223151446) do
+ActiveRecord::Schema.define(version: 20190226085150) do
+
+  create_table "instrument_kinds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "instruments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "instrument_name"
@@ -19,9 +25,17 @@ ActiveRecord::Schema.define(version: 20190223151446) do
     t.string   "description"
     t.string   "content"
     t.string   "link_url"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.string   "picture"
+    t.integer  "instrument_kind_id"
+    t.index ["instrument_kind_id"], name: "index_instruments_on_instrument_kind_id", using: :btree
+  end
+
+  create_table "plugin_kinds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "plugins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -31,9 +45,13 @@ ActiveRecord::Schema.define(version: 20190223151446) do
     t.string   "description"
     t.string   "content"
     t.string   "link_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "picture"
+    t.integer  "plugin_kind_id"
+    t.index ["plugin_kind_id"], name: "index_plugins_on_plugin_kind_id", using: :btree
   end
 
+  add_foreign_key "instruments", "instrument_kinds"
+  add_foreign_key "plugins", "plugin_kinds"
 end
