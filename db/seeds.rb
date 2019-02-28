@@ -3,7 +3,7 @@ plugin_kinds.each do |plugin|
   PluginKind.create!(name: plugin)
 end
 
-instrument_kinds = %w(synthsizer piano guitar strings wind other_instrument)
+instrument_kinds = %w(synthesizer piano guitar strings wind other_instrument)
 instrument_kinds.each do |instrument|
   InstrumentKind.create!(name: instrument)
 end 

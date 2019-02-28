@@ -45,8 +45,10 @@
     </div>
     
     <div class='form-group'>
-       <%= f.label :instrument_kind_id,'ソフトシンセの種類' %>
-       <%= f.collection_select :instrument_kind_id,InstrumentKind.all,:id, :name %>
+        <%= f.label :instrument_kind_id,'ソフトシンセの種類' %>
+      <p class="text-black">
+        <%= f.collection_select :instrument_kind_id,InstrumentKind.all,:id, :name %>
+      </p>
     </div>
     
      <%= button_tag( class: "btn btn-primary") do %>
