@@ -1,5 +1,3 @@
-<h1>プラグイン</h1>
- <% if @plugins.any? %>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -10,7 +8,7 @@
     <tbody>
       <% @plugins.each do |plugin| %>
         <tr>
-          <td><%= link_to plugin.plugin_name,plugin %></td>
+          <td><%= link_to plugin.plugin_name,plugin%></td>
           <td><%=plugin.company %></td>
         </tr>
       <% end %>
@@ -19,7 +17,7 @@
   <div>
     
   </div>
-<% end %>
 
-<%= link_to 'AddPlugin(StaffOnly)',new_plugin_path,class: 'btn btn-primary',class: 'glyphicon glyphicon-ok'%>
+<%= link_to 'Add Plugin(StaffOnly)',new_plugin_path,class: 'btn btn-primary',class: 'glyphicon glyphicon-ok'%>
+
 

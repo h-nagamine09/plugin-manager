@@ -16,15 +16,19 @@
 
   <body>
      <%= render 'layouts/navbar' %>
-
     <div class="container">
       <div class="row">
-       <div class="col-xs-12 col-sm-offset-2 col-sm-8 col-lg-offset-2 col-lg-8">
+       <div class="col-xs-12 col-sm-offset-2 col-sm-8  col-lg-8">
           <%= render 'layouts/flash_messages' %>
 
           <%= yield %>
        </div>
       </div>
     </div>
+   <footer>
+    <div class="text-center">
+     <p>© Hiroki Nagamine</p>
+    </div>
+  </footer>
   </body>
 </html>

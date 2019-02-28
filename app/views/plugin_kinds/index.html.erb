@@ -1,15 +1,9 @@
 <div class= "main-container">
-  <div class="center jumbotron">
     <div class="text-center">
      <h1>Select plugin Category</h1>
+       <% @plugin_kinds.each do|plugin_kind| %>
        <ul>
-         <li> <%=link_to 'Equalizer',plugins_path,class: 'btn btn-primary' %></li>
-         <li><%=link_to 'Compressor',plugins_path,class: 'btn btn-primary' %></li>
-         <li><%=link_to 'Limiter',plugins_path,class: 'btn btn-primary' %></li>
-         <li><%=link_to 'Delay&Reverb',plugins_path,class: 'btn btn-primary' %></li>
-         <li><%=link_to 'Moduler','https://soundcloud.com/delay0906',class: 'btn btn-primary' %></li>
-         <li><%=link_to 'Other-Plugins','https://soundcloud.com/delay0906',class: 'btn btn-primary' %></li>
+        <li><%= link_to plugin_kind.name,plugin_kind %></li>
        </ul>
+        <% end %>
     </div>
-  </div>
-</div>

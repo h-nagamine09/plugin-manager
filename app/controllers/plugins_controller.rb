@@ -1,8 +1,9 @@
 class PluginsController < ApplicationController
+  before_action :basic , except: [:index,:show]
   before_action :set_plugin, only: [:show, :edit, :update, :destroy]
   
   def index
-    @plugins = Plugin.all #pluginの一覧を取得、表示
+    @plugins = Plugin.all#pluginの一覧を取得、表示
   end
   
   def show

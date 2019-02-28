@@ -1,9 +1,9 @@
 <h1><%= @instrument.instrument_name %></h1>
 <table class="table table-bordered">
   <aside>
-    <div class="plugin-image">
-      <div class="img-resposive"alt="">
-      <%=image_tag(@instrument.picture_url)if @instrument.picture.present? %>
+    <div class="text-center">
+      <div class="instrument-image">
+        <%=image_tag(@instrument.picture_url,class: "img-responsive")if @instrument.picture.present? %>
       </div>
     </div>
   </aside>
@@ -13,7 +13,7 @@
   </tr>
    <tr>
     <th>ソフトシンセの種類</th>
-    <td><%=@instrument.instrument_kind_id%></td>
+    <td><%=@instrument.instrument_kind.name%></td>
   </tr>
   <tr>
     <th>ソフトシンセを買った値段</th>
@@ -23,7 +23,7 @@
     <th>ソフトシンセのメーカー</th>
     <td><%=@instrument.company %></td>
   </tr>
-  <tr>
+  <tr> 
     <th>ソフトシンセの説明</th>
     <td><%=@instrument.description %></td>
   </tr>
@@ -38,10 +38,7 @@
 </table>
   
   
+<%= link_to 'Edit(StaffOnly)',edit_plugin_path,class: 'btn btn-primary',class: 'glyphicon glyphicon-wrench' %>
 
-
-<%=link_to 'ソフトシンセを追加',new_instrument_path,class: 'btn btn-primary' %>
-<%=link_to 'このソフトシンセの編集',edit_instrument_path(@instrument),class: 'btn btn-default'%>
-<%=link_to 'このソフトシンセを削除', @instrument,method: :delete,data: {confirm: 'Delete OK?'},class: 'btn btn-danger'%>
 
 

@@ -1,8 +1,10 @@
 <h1><%= @plugin.plugin_name %></h1>
 <table class="table table-bordered">
   <aside>
-    <div class="plugin-image">
-      <%=image_tag(@plugin.picture_url)if @plugin.picture.present? %>
+    <div class="text-center">
+      <div class="plugin-image">
+        <%=image_tag(@plugin.picture_url,class: "img-responsive")if @plugin.picture.present? %>
+      </div>
     </div>
   </aside>
   <tr>
@@ -11,7 +13,7 @@
   </tr>
   <tr>
     <th>プラグインの種類</th>
-    <!--<td>#@plugin.plugin_kinds</td>-->
+    <td><%= @plugin.plugin_kind.name%></td>
   </tr>
   <tr>
     <th>プラグインを買った値段</th>
@@ -34,8 +36,8 @@
     <td><%=link_to @plugin.company,@plugin.link_url %></td>
   </tr>
 </table>
-  
-  
+  <%= link_to 'Edit(StaffOnly)',edit_plugin_path,class: 'btn btn-primary',class: 'glyphicon glyphicon-wrench' %>
+
 
 
 

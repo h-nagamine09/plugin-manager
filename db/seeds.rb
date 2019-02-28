@@ -1,4 +1,4 @@
-plugin_kinds = %w(equalizer compressor limiter rever_bdelay moduler other_plugin)
+plugin_kinds = %w(equalizer compressor limiter reverb&delay moduler other_plugin)
 plugin_kinds.each do |plugin|
   PluginKind.create!(name: plugin)
 end

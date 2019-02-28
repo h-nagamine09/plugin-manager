@@ -1,6 +1,4 @@
-<h1>ソフトシンセ</h1>
-<% if @instruments.any? %>
-  <table class="table table-striped">
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>ソフトシンセの名前</th>
@@ -16,8 +14,8 @@
       <% end %>
     </tbody>
   </table>
- 
-<% end %>
+  <div>
+    
+  </div>
 
-<%= link_to 'AddInstruments(StaffOnly)',new_instrument_path,class: 'btn btn-primary',class: 'glyphicon glyphicon-ok'%>
-
+<%= link_to 'Add Instrument(Staff)',new_instrument_path,class: 'btn btn-primary' %>

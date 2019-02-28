@@ -1,6 +1,6 @@
 <h1>id: <%=@instrument.id%>のUpdate</h1>
 
  <%= render 'form', instrument: @instrument %>
- 
+ <%=link_to 'Delete', @instrument,method: :delete,data: {confirm: 'Delete OK?'}, class: 'btn btn-danger',class: 'glyphicon glyphicon-trash'%>
 
 

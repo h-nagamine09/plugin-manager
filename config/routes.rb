@@ -8,8 +8,8 @@ Rails.application.routes.draw do
  
 resources :plugins  #, only: [:index, :show]
 resources :instruments #, only: [:index, :show]
-resources :plugin_kinds , only: [:index]
-resources :instrument_kinds, only: [:index]
+resources :plugin_kinds , only: [:index,:show]
+resources :instrument_kinds, only: [:index,:show]
     # 以下は
     # namespace :admin do
     #     resources :plugins
